@@ -88,10 +88,12 @@ body {
   flex: 1;
   border: none;
   outline: none;
-  padding: 0 15px;
+  padding: 12px 15px;
   background: #e6e0db;
   font-size: 14px;
+  height: 50px;
 }
+
 
 .subscribe button {
   padding: 0 25px;
