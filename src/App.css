@@ -234,6 +234,11 @@ body {
     height: 50px;
   }
 
+  .logo-img {
+    width: 275px;
+    margin-bottom: 0;
+  }
+
   .right {
     height: 50vh;
   }
