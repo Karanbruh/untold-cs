@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* LEFT */
+
+.left {
+  width: 55%;
+  background: #f3ede7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 70%;
+}
+
+.logo {
+  border: 1px solid #000;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+}
+
+.subtext {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+}
+
+.timer {
+  font-size: 26px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.subscribe {
+  display: flex;
+  margin-top: 30px;
+}
+
+.subscribe input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: #e6e0db;
+}
+
+.subscribe button {
+  padding: 12px 20px;
+  border: none;
+  background: #b8ada5;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* RIGHT */
+
+.right {
+  width: 55%;
+  position: relative;
+  overflow: visible;
+  /* IMPORTANT */
+}
+
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-img {
+  position: absolute;
+  width: 320px;
+  top: 50%;
+  left: -80px;
+  transform: translateY(-50%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img {
+  width: 200px;
+  /* Adjust size here */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.left-content {
+  padding-left: 20px;
+}
