@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import logo from "./assets/logo.png"
+import midImg from "./assets/mid-img.jpeg"
 
 function App() {
 
@@ -91,7 +92,7 @@ function App() {
 
         <img
           className="overlay-img"
-          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+          src={midImg}
           alt="model"
         />
       </div>

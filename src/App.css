@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
 
 * {
   margin: 0;
@@ -10,100 +10,114 @@ html,
 body {
   height: 100%;
   overflow-x: hidden;
-}
-
-body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
 }
+
+/* ================= CONTAINER ================= */
 
 .container {
   display: flex;
   height: 100vh;
+  /* Force exact viewport height */
   overflow: hidden;
+  /* Prevent scroll */
 }
 
 
-/* LEFT */
+/* ================= LEFT SIDE ================= */
 
 .left {
-  width: 55%;
+  flex: 1;
   background: #f3ede7;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 6%;
+  /* REMOVE top/bottom padding */
 }
+
 
 .content {
-  width: 70%;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
-.logo {
-  border: 1px solid #000;
-  padding: 10px 20px;
-  display: inline-block;
-  margin-bottom: 40px;
-  letter-spacing: 3px;
+
+.logo-img {
+  width: 170px;
+  margin-bottom: 35px;
 }
 
 .subtext {
   font-size: 14px;
-  margin-bottom: 20px;
-  color: #555;
+  color: #6e6862;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 .title {
   font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  letter-spacing: 5px;
-  margin-bottom: 30px;
+  font-size: 48px;
+  letter-spacing: 6px;
+  margin-bottom: 25px;
 }
 
 .timer {
-  font-size: 26px;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
+  font-size: 28px;
+  letter-spacing: 4px;
   font-weight: 500;
+  margin-bottom: 25px;
 }
 
 .description {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 20px;
+  font-size: 14px;
+  color: #6f6863;
+  line-height: 1.7;
+  margin-bottom: 25px;
 }
 
 .subscribe {
   display: flex;
-  margin-top: 30px;
+  height: 50px;
+  max-width: 420px;
 }
 
 .subscribe input {
   flex: 1;
-  padding: 12px;
   border: none;
   outline: none;
+  padding: 0 15px;
   background: #e6e0db;
+  font-size: 14px;
 }
 
 .subscribe button {
-  padding: 12px 20px;
+  padding: 0 25px;
   border: none;
   background: #b8ada5;
   color: white;
-  cursor: pointer;
   font-size: 12px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* RIGHT */
+.subscribe button:hover {
+  background: #a4978f;
+}
+
+/* ================= RIGHT SIDE ================= */
 
 .right {
-  width: 55%;
+  flex: 1;
   position: relative;
-  overflow: visible;
-  /* IMPORTANT */
+  overflow: hidden;
+  height: 100vh;
 }
-
 
 .background-img {
   width: 100%;
@@ -111,24 +125,127 @@ body {
   object-fit: cover;
 }
 
+/* Soft blend effect */
+.right::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(to right, #f3ede7, rgba(243, 237, 231, 0));
+  z-index: 1;
+}
+
 .overlay-img {
   position: absolute;
-  width: 320px;
+  width: 340px;
   top: 50%;
-  left: -80px;
+  left: -60px;
   transform: translateY(-50%);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
-.logo-img {
-  width: 200px;
-  /* Adjust size here */
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+/* ================= RESPONSIVE ================= */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .overlay-img {
+    width: 280px;
+    left: -40px;
+  }
 }
 
-.left-content {
-  padding-left: 20px;
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    padding: 60px 30px;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .subscribe {
+    margin: 0 auto;
+  }
+
+  .right {
+    height: 60vh;
+  }
+
+  .overlay-img {
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+  }
+
+  .right::before {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .title {
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .timer {
+    font-size: 22px;
+  }
+
+  .logo-img {
+    width: 140px;
+  }
+
+  .subscribe {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .subscribe input {
+    height: 45px;
+  }
+
+  .subscribe button {
+    height: 45px;
+    width: 100%;
+  }
+
+  .right {
+    height: 50vh;
+  }
+
+  .overlay-img {
+    width: 220px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .title {
+    font-size: 26px;
+  }
+
+  .timer {
+    font-size: 18px;
+  }
+
+  .overlay-img {
+    width: 180px;
+  }
 }
